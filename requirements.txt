@@ -9,3 +9,4 @@ geopy
 streamlit
 kagglehub
 supabase
+flake8
