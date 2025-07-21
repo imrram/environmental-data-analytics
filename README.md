@@ -84,7 +84,7 @@ This script will:
 
 ### 4. Launch Dashboard
 ```
-streamlit run dashboard.py
+streamlit run code/dashboard.py
 ```
 Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
