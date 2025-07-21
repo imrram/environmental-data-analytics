@@ -17,3 +17,15 @@ jobs:
 
       - name: Print Python Version
         run: python --version
+
+      - name: Install Dependencies
+        run: |
+            pip install -r requirements.txt
+
+      - name: Lint Check (Optional)
+        run: |
+          flake8 .
+
+      - name: Run Tests (Optional)
+        run: |
+          pytest
