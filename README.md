@@ -36,15 +36,15 @@ This project addresses the challenges of climate change and urban air pollution 
 ├── data/                       # Automatically downloaded datasets
 │   ├── air-quality-data-in-india/
 │   └── gistemp-global-temp/
-├── download_data.py           # Downloads data using kagglehub
+├── dataset_download.py           # Downloads data using kagglehub
 ├── ingest_pipeline.py         # Cleans and ingests datasets
 ├── feature_engineering.py     # Aggregates and transforms data
 ├── forecast_model.py          # PM2.5 forecasting with Prophet
 ├── clustering.py              # City clustering with KMeans
 ├── anomaly_detection.py       # Isolation Forest for outliers
 ├── visualization.py           # Plotting and mapping tools
-├── app.py                     # Streamlit dashboard
-├── run_all.py                 # Runs full pipeline
+├── dashboard.py                     # Streamlit dashboard
+├── app.py                 # Runs full pipeline
 ├── README.md                  # Project documentation
 ```
 
@@ -65,7 +65,7 @@ pip install -r requirements.txt
 
 ### 3. Run the Project
 ```
-python run_all.py
+python app.py
 ```
 
 This script will:
