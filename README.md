@@ -59,7 +59,7 @@ cd environmental-data-analytics
 ```
 
 ### 2. Install Required Packages
-## Dependencies
+#### Dependencies
 
 - Python 3.10+
 - pandas, numpy, scikit-learn
@@ -68,7 +68,6 @@ cd environmental-data-analytics
 - streamlit
 - kagglehub
 
----
 ```
 pip install -r requirements.txt
 ```
