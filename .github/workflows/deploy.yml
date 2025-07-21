@@ -24,6 +24,6 @@ jobs:
 
       - name: Run Streamlit (test only)
         run: |
-            streamlit run main.py --server.headless true &
+            streamlit run code/dashboard.py --server.headless true &
             sleep 10
     
