@@ -98,6 +98,11 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 - Anomaly detection highlighting critical AQI spikes
 - Geospatial map of Delhi station AQI levels
 
+## Cloud Integration (Supabase)
+- The project integrates Supabase Storage to store raw datasets in the cloud.
+- At the end of each execution, the processed data is uploaded to the Supabase bucket (environmental-data).
+- This ensures cloud-based backup, availability for downstream services, and aligns with the project’s cloud architecture requirement.
+
 ---
 
 
