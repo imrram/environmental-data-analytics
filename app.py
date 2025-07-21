@@ -16,4 +16,4 @@ run_script("code/map_station_pollution.py")
 run_script("code/clustering_anomaly.py")
 
 print("\nAll scripts completed successfully.")
-print("To launch the dashboard: streamlit run dashboard.py\n")
+print("To launch the dashboard: streamlit run code/dashboard.py\n")

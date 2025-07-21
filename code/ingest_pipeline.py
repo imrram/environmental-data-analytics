@@ -6,13 +6,7 @@ def load_pm25_data(filepath="data/air-quality-data-in-india/city_day.csv"):
     df = df[["Date", "PM2.5"]].dropna()
     return df
 
-# def load_global_temp(filepath="data/gistemp_global_temp/monthly.csv"):
-#     df = pd.read_csv(filepath, parse_dates=["Date"])
-#     df = df[df["Source"] == "GISTEMP"]
-#     return df[["Date", "Mean"]].rename(columns={"Date": "Month", "Mean": "GlobalTemp"})
-
-
-def load_global_temp(filepath="data/gistemp_global_temp/monthly.csv"):
+def load_global_temp(filepath="data/gistemp-global-temp/monthly.csv"):
     df = pd.read_csv(filepath)
 
     if "Year" in df.columns:
@@ -26,7 +20,7 @@ def load_global_temp(filepath="data/gistemp_global_temp/monthly.csv"):
     df = df.rename(columns={"Mean": "GlobalTemp"})
     return df[["Month", "GlobalTemp"]]
 
-def load_annual_temp(filepath="data/gistemp_global_temp/annual.csv"):
+def load_annual_temp(filepath="data/gistemp-global-temp/annual.csv"):
     df = pd.read_csv(filepath)
     df["Year"] = pd.to_datetime(df["Year"], format="%Y")
     df = df.rename(columns={"Mean": "GlobalTemp"})
