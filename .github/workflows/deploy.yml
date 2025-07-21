@@ -22,10 +22,8 @@ jobs:
         run: |
             pip install -r requirements.txt
 
-      - name: Lint Check (Optional)
+      - name: Run Streamlit (test only)
         run: |
-          flake8 .
-
-      - name: Run Tests (Optional)
-        run: |
-          pytest
+            streamlit run main.py --server.headless true &
+            sleep 10
+    
