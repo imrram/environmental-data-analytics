@@ -1,6 +1,6 @@
 # Environmental Data Analytics Project
 
-Capstone Project – EcoSphere Institute  
+Capstone Project – Indian Institute Of Technology, Jodhpur & EcoSphere Institute
 
 ---
 
