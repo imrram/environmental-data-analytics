@@ -33,19 +33,19 @@ This project addresses the challenges of climate change and urban air pollution 
 ## Project Structure
 
 ```
-├── data/                       # Automatically downloaded datasets
+├── data/                         # Automatically downloaded datasets
 │   ├── air-quality-data-in-india/
 │   └── gistemp-global-temp/
 ├── dataset_download.py           # Downloads data using kagglehub
-├── ingest_pipeline.py         # Cleans and ingests datasets
-├── feature_engineering.py     # Aggregates and transforms data
-├── forecast_model.py          # PM2.5 forecasting with Prophet
-├── clustering.py              # City clustering with KMeans
-├── anomaly_detection.py       # Isolation Forest for outliers
-├── visualization.py           # Plotting and mapping tools
-├── dashboard.py                     # Streamlit dashboard
-├── app.py                 # Runs full pipeline
-├── README.md                  # Project documentation
+├── ingest_pipeline.py            # Cleans and ingests datasets
+├── feature_engineering.py        # Aggregates and transforms data
+├── forecast_model.py             # PM2.5 forecasting with Prophet
+├── clustering.py                 # City clustering with KMeans
+├── anomaly_detection.py          # Isolation Forest for outliers
+├── visualization.py              # Plotting and mapping tools
+├── dashboard.py                  # Streamlit dashboard
+├── app.py                        # Runs full pipeline
+├── README.md                     # Project documentation
 ```
 
 ---
@@ -59,6 +59,16 @@ cd environmental-data-analytics
 ```
 
 ### 2. Install Required Packages
+## Dependencies
+
+- Python 3.10+
+- pandas, numpy, scikit-learn
+- prophet
+- folium, geopy
+- streamlit
+- kagglehub
+
+---
 ```
 pip install -r requirements.txt
 ```
@@ -91,24 +101,4 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
 
-## Dependencies
 
-- Python 3.10+
-- pandas, numpy, scikit-learn
-- prophet
-- folium, geopy
-- streamlit
-- kagglehub
-
-Install all via:
-```
-pip install -r requirements.txt
-```
-
----
-
-## Data Handling Note
-
-To avoid GitHub file size limits, the `data/` folder is excluded via `.gitignore`. When you run the project, it will automatically pull the datasets from Kaggle using `kagglehub` if the folder is empty.
-
----
