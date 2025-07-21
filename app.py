@@ -10,6 +10,7 @@ def run_script(script_name):
 
 print("\nStarting Full Capstone Pipeline...\n")
 
+run_script("code/dataset_download.py")
 run_script("code/main_pipeline.py")
 run_script("code/map_station_pollution.py")
 run_script("code/clustering_anomaly.py")

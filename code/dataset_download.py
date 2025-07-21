@@ -1,16 +1,40 @@
-import kagglehub
-import shutil
 import os
+import shutil
+import kagglehub
 
-path = kagglehub.dataset_download("rohanrao/air-quality-data-in-india")
+# Define dataset slugs
+DATASETS = {
+    "air-quality-data-in-india": "ram0007/air-quality-data-in-india",
+    "gistemp-global-temp": "ram0007/gistemp-global-temp"
+}
 
-target_dir = os.path.join("data", "air-quality-data-in-india")
-os.makedirs(target_dir, exist_ok=True)
+# Define destination folder
+DEST_FOLDER = "data"
 
-for root, _, files in os.walk(path):
-    for file in files:
-        src = os.path.join(root, file)
-        dst = os.path.join(target_dir, file)
-        shutil.move(src, dst)
+def is_data_empty():
+    return not os.path.exists(DEST_FOLDER) or not any(os.scandir(DEST_FOLDER))
 
-print(f"All files moved into {target_dir}")
+def safe_move(src_folder, dataset_name):
+    dst_folder = os.path.join(DEST_FOLDER, dataset_name)
+    os.makedirs(dst_folder, exist_ok=True)
+
+    for filename in os.listdir(src_folder):
+        src_file = os.path.join(src_folder, filename)
+        dst_file = os.path.join(dst_folder, filename)
+        shutil.move(src_file, dst_file)
+        print(f"Moved {filename} to {dst_folder}")
+
+def download_datasets():
+    os.makedirs(DEST_FOLDER, exist_ok=True)
+
+    for name, kaggle_id in DATASETS.items():
+        print(f"Downloading: {name}...")
+        dataset_path = kagglehub.dataset_download(kaggle_id)
+        safe_move(dataset_path, name)
+        print(f"Downloaded and moved: {name}\n")
+
+if is_data_empty():
+    print("Data folder is empty. Fetching datasets...")
+    download_datasets()
+else:
+    print("Data already exists. Skipping download.")
